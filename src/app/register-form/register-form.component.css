@@ -1,0 +1,35 @@
+.inputStyle{
+    margin-right: 20px;
+}
+#email{
+    width: 31%;
+}
+#container{
+    margin: 20px 70px;
+}
+.addressField{
+    width: 31%;
+}
+#radio-buttons{
+    margin-bottom: 20px;
+    margin-top: 35px
+}
+.radio-button-style{
+    margin-right: 20px;
+}
+#formHeader{
+    color: #4a148c;
+}
+#address{
+    color: cadetblue;
+}
+#button-style{
+    margin-left: 70px;
+}
+#resetButton{
+    margin-right: 70px;
+    padding: 0px 30px;
+}
+#submitButton{
+    padding: 0px 30px;
+}

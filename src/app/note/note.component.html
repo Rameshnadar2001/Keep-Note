@@ -1,0 +1,36 @@
+
+    <mat-card class="card" (mouseenter)="buttonVisibility()" (mouseleave)="onMouseLeave()">
+    <mat-card-header id="card-header">
+        <mat-card-title id="card-title">
+            <h3>{{note?.title}}</h3>
+            <mat-icon class="matIcon" *ngIf="note.priority === 'High'" color="accent">arrow_circle_up</mat-icon>
+            <mat-icon class="matIcon" *ngIf="note.priority === 'Medium'" color="primary">remove_circle_outline</mat-icon>
+            <mat-icon class="matIcon" *ngIf="note.priority === 'Low'" color="accent">arrow_circle_down</mat-icon>
+            <mat-icon class="matIcon" *ngIf="note.priority === 'Critical'" color="accent">gpp_maybe</mat-icon>
+        </mat-card-title>
+        <mat-card-subtitle id="card-subtitle">
+            <small>{{note?.reminderDate}}</small>
+        </mat-card-subtitle>
+        <mat-card-content>
+            <p>{{note?.content}}</p>
+        </mat-card-content>
+    </mat-card-header>
+    <!-- <div id="categoryContent">
+        <span id="noteCategory">{{note?.category}}</span>
+    </div> -->
+    <mat-card-footer>
+        <button *ngIf="isHovered" mat-icon-button color="primary" class="button-icon">
+            <mat-icon class="icon">comment</mat-icon>
+        </button>
+        <button *ngIf="isHovered" mat-icon-button color="primary" class="button-icon" (click)="navigateToEdit(note)">
+            <mat-icon class="icon">edit</mat-icon>
+        </button>
+        <button *ngIf="isHovered" mat-icon-button color="primary" (click)="delete(note)" class="button-icon">
+            <mat-icon class="icon">delete</mat-icon>
+        </button>
+        <button *ngIf="isHovered" mat-icon-button color="accent" class="button-icon">
+            <mat-icon class="icon">notifications</mat-icon>
+        </button>
+    </mat-card-footer>
+</mat-card>
+

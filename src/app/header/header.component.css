@@ -1,0 +1,11 @@
+#header{
+    display: flex;
+    justify-content: space-between;
+}
+#title{
+    display: inline-flex;
+    align-items: center;
+}
+#icons{
+    margin-right: 100px;
+}

@@ -1,0 +1,104 @@
+<div id="addNote">
+  <mat-expansion-panel [expanded]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title> New Note </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-panel-description>
+      <div id="addNoteForm">
+        <form #form="ngForm" (ngSubmit)="addNewNote(form)">
+          <mat-form-field class="formField" appearance="fill">
+            <mat-label>Note Title</mat-label>
+            <input
+              matInput
+              type="text"
+              [(ngModel)]="note.title"
+              name="title"
+              #title="ngModel"
+              placeholder="Note Title"
+              required
+            />
+            <mat-error *ngIf="title.errors?.['required']">
+              Note title is required
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="formField" appearance="fill">
+            <mat-label>Note Content</mat-label>
+            <textarea
+              matInput
+              cols="35"
+              rows="2"
+              [(ngModel)]="note.content"
+              name="content"
+              #content="ngModel"
+              minlength="5"
+              required
+            ></textarea>
+            <mat-error *ngIf="content.errors?.['required']">
+              Note content is required
+            </mat-error>
+            <mat-error *ngIf="content.errors?.['minlength']">
+              Note content should have minimum
+              {{ content.errors?.['minlength'].requiredLength }} characters
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="formField" appearance="fill">
+            <mat-label>Reminder date</mat-label>
+            <input
+              matInput
+              type="datetime-local"
+              [(ngModel)]="note.reminderDate"
+              required
+              name="reminderDate"
+              #reminderDate="ngModel"
+            />
+            <mat-error *ngIf="reminderDate.errors?.['required']">
+              Reminder Date is required
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="formField" appearance="fill">
+            <mat-label>Add Category</mat-label>
+            <input
+              matInput
+              type="string"
+              [(ngModel)]="note.category"
+              name="category"
+              #category="ngModel"
+            />
+          </mat-form-field>
+          <br />
+          <p>Priority</p>
+          <mat-radio-group
+            name="priority"
+            #priority="ngModel"
+            [(ngModel)]="note.priority"
+          >
+            <mat-radio-button class="radio-button" value="Low"
+              >Low</mat-radio-button
+            >
+            <mat-radio-button class="radio-button" value="Medium"
+              >Medium</mat-radio-button
+            >
+            <mat-radio-button class="radio-button" value="High"
+              >High</mat-radio-button
+            >
+            <mat-radio-button class="radio-button" value="Critical"
+              >Critical</mat-radio-button
+            >
+          </mat-radio-group>
+          <br />
+          <button
+            [disabled]="form.invalid"
+            id="icon-button"
+            mat-fab
+            type="submit"
+          >
+            <mat-icon>save</mat-icon>
+          </button>
+        </form>
+      </div>
+    </mat-panel-description>
+  </mat-expansion-panel>
+</div>

@@ -1,0 +1,13 @@
+<app-note-add *ngIf="isSelected"></app-note-add>
+<app-search (searchNote)="onSearchNote($event)"></app-search>
+<div class="container">
+    <app-note *ngFor="let note of notes" [note]="note"></app-note>
+</div>
+<button (click)="onButtonClick()" class="addButton" mat-fab color="primary">
+    <mat-icon>add</mat-icon>
+</button>
+<button>
+    <mat-icon>_logout</mat-icon>
+</button>
+
+

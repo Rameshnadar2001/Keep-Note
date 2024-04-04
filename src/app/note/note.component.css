@@ -1,0 +1,38 @@
+.card{
+    width: 255px;
+    height: auto;
+    margin-bottom: 50px;
+}
+#card-title{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-right: 10px;
+}
+.button-icon{
+    margin-right: 30px;
+}
+.icon{
+    font-size: 20px;
+}
+
+#card-header{
+    display: flex;
+    flex-direction: column;
+}
+#card-subtitle{
+    text-align: center;
+}
+#noteCategory{
+    border: 1px solid lightgrey;
+    padding: 5px 10px 5px 10px;
+    border-radius: 20px;
+    background-color: #E0E0E0;
+    font-weight: 500;
+}
+#categoryContent{
+    margin-bottom: 20px;
+}
+.matIcon{
+    margin-left: 1px;
+}
